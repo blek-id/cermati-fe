@@ -1,0 +1,279 @@
+$primary-color: #007bc1;
+$secondary-color: #004a75;
+$tertiary-color: #e5e5e5;
+
+$primary-button-color: #ff8000;
+$secondary-button-color: #cc6600;
+
+.App {
+}
+
+a {
+  text-decoration: none;
+}
+
+.notification {
+  display: flex;
+  position: sticky;
+  top: 0;
+  background-color: $tertiary-color;
+  height: auto;
+  max-height: 200px;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+  
+  @media only screen and (min-width: 960px) {
+    justify-content: center;
+  }
+}
+
+.notification__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 0.3em;
+  max-width: 720px;
+  
+  @media only screen and (min-width: 960px) {
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+  }
+}
+
+.notification__text {
+  flex: 2;
+  font-size: 0.8em;
+  margin: 0.4em 0;
+  
+  @media only screen and (min-width: 960px) {
+    font-size: 1em;
+  }
+}
+
+.notification__closed {
+  max-height: 0;
+  // transition-timing-function: ease-in;
+}
+
+.logo {
+  width: 48px;
+  height: auto;
+  align-self: flex-start;
+  justify-self: flex-start;
+}
+
+.hero {
+  background-image:
+  linear-gradient(
+    rgba($secondary-color, 0.75), 
+    rgba($secondary-color, 0.75)
+  )
+  ,url(../../assets/images/work-desk__dustin-lee.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  padding: 1.2em;
+}
+
+.hero__content {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+
+  &--header {
+    font-weight: normal;
+    font-size: 1.8em;
+    
+    @media only screen and (min-width: 960px) {
+      font-size: 2.2em;
+    }
+  }
+
+  &--subheader {
+    font-weight: 500;
+  }
+
+  &--content {
+    font-size: 1.3em;
+    margin: 0;
+    
+    @media only screen and (min-width: 960px) {
+      font-size: 1.7em;
+    }
+  }
+}
+
+.btn {
+  border: 0;
+  padding: 0.5rem;
+  border-radius: 2px;
+  font-size: 1em;
+  cursor: pointer;
+
+}
+
+.btn--hero {
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 1rem;
+  padding: 1.2rem;
+  
+  &:hover {
+    background-color: white;
+    color: $primary-color;
+  }
+}
+
+.btn--notification {
+  background-color: $primary-color;
+  color: white;
+  margin: 0.4em;
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+}
+
+.btn--subscription {
+  background-color: $primary-button-color;
+  color: white;
+  font-weight: 600;
+
+  &:hover {
+    background-color: $secondary-button-color;
+  }
+}
+
+.feature {
+  background-color: $tertiary-color;
+  padding: 1.2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature__text {
+  text-align: center;
+
+  &--header {
+    font-size: 1.8em;
+  }
+
+  &--subheader {
+    font-size: 1.3em;
+    display: inline-block;
+    width: 80%;
+    
+    @media only screen and (min-width: 960px) {
+      width: 50%;
+    }
+  }
+}
+
+.feature__grid {
+  display: grid;
+  
+  @media only screen and (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+  
+  @media only screen and (min-width:480px) and (max-width: 960px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  @media only screen and (min-width: 960px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card {
+  border: 2px solid #ccc;
+  padding: 1em;
+  margin: 0.5em;
+}
+
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__text {
+
+  &--title {
+    font-weight: 400;
+    margin: 0;
+  }
+}
+
+.footer {
+  background-color: $secondary-color;
+  padding: 1em;
+}
+
+.footer__text {
+  color: white;
+  text-align: center;
+}
+
+.subscription {
+  background-color: rgba($primary-color, 0.85);
+  bottom: 0;
+  position: fixed;
+  max-width: 640px;
+  
+  transition: 0.25s;
+  transition-timing-function: ease-in;
+}
+
+.subscription__text {
+  color: white;
+  margin: 0.2em 0;
+
+  &--header {
+    font-size: 1.8em;
+    font-weight: 500;
+  }
+}
+
+.subscription__close {
+  color: white;
+  align-self: flex-end;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.subscription__closed {
+  transition: 0.25s;
+  transition-timing-function: ease-out;
+  
+  transform: translateY(100%);
+}
+
+.subscription__container {
+  display: flex;
+  flex-direction: column;    
+  padding: 0.6em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__input {
+  margin: 1em 0;
+  font-size: 1em;
+  padding: 0.4em;
+}

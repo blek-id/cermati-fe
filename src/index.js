@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+
+import { faComments, faPaintBrush, faCubes, faBullhorn, faChartLine, faStream, faTimes } from '@fortawesome/free-solid-svg-icons';
+
+library.add(
+  faComments, faPaintBrush, faCubes, faBullhorn, faChartLine, faStream, faTimes
+);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
